@@ -1,0 +1,407 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+.story__article::after {
+        animation: rotate 20s linear infinite; /* Faites tourner l'image en permanence */
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg); /* L'image tourne à 360 degrés */
+        }
+      }
+
+
+section.banner > img {
+        opacity: 0;
+        transform: translateY(100%); /* Déplacez vers le bas de 100% (hors de la vue) */
+        animation: fadeInDown 2s ease-in-out forwards; /* Animation de fondu en descendant */
+        animation-delay: 1s; /* Délai de 1 seconde avant le début de l'animation */    
+} 
+    @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          transform: translateY(100%);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+
+    // TITLE SCROLL ANIMATION
+// TITLE SCROLL ANIMATION
+@keyframes slideInUp {
+  0% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Styles pour les mots dans les éléments h2 et h3 */
+h2, h3 {
+  display: inline;
+}
+
+.word {
+  display: inline-block; /* ou display: inline */
+  opacity: 0;
+}
+
+.word.show {
+  opacity: 1;
+  // transform: translateY(0);
+}
+
+
+
+h2.visible, h3.visible{
+  display: block; /* ou display: inline, flex, etc., selon la mise en page souhaitée */
+}
+
+h3.visible > p.word.show {
+  animation: slideInUp 3000ms ease-in-out;
+  display: inline-flex; 
+  margin-right: 5px; 
+}
+h2.visible > p.word.show {
+  animation: slideInUp 3000ms ease-in-out;
+  display: inline-flex; 
+  margin-right: 5px;}
+
+.story #place > div p {
+  padding-left: 0;
+}
+
+
+
+
+
+
+
+/* Style du texte à l'intérieur de p.festival */
+p.festival {
+  color: #FFF5E9;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Quicksand;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.84px;
+  filter:drop-shadow(0px 10px 23px #FF5C00)
+}
+   div.text-blur{
+    filter:drop-shadow(0px 10px 23px #FF5C00)
+  }
+    
+
+div.festival-div{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+    div.text-blur{
+      display: flex;
+    }
+}
+
+
+// VIDEO HEADER CSS 
+/* Style pour la section du hero header */
+.hero-header {
+  overflow: hidden;
+  /* Style pour la vidéo de fond */
+  #background-video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1; 
+    position: relative;
+  }
+}
+
+//Logo video header
+img.logo-video{
+  position:absolute;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: fadeInDown 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+
+
+
+// Swiper section 
+div.swiper.mySwiper{
+  width: 99vw;
+}
+.swiper-3d {
+  perspective: none; /* ou perspective: initial; */
+}
+
+
+
+div.swiper-wrapper{
+  position: relative;
+  right: 18%;
+}
+// PARALLAXE SECTION
+.section.banner {
+  position: absolute;
+  min-height: 806px;
+}
+
+
+img.parallax-logo {
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  transform: translateX(0); /* Démarrez avec une translation nulle */
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+
+// Test nuage parallax 
+  .story #place {
+    width: 100%;
+    min-height: 699px;
+    /* Première image (vallée) */
+    background-image: url('/wp-content/uploads/2023/09/Studio_Koukaki-image_place.png');
+    position: relative;
+}
+
+
+/* Styles pour les nuages */
+.cloud {
+  position: absolute;
+  width: 100px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  z-index: 2; /* Ajustez le z-index selon vos besoins */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.big-cloud {
+  /* Styles spécifiques au grand nuage */
+  background-image: url('/wp-content/uploads/2023/09/big_cloud.png');
+    filter: blur(10.5px);
+    top: 10%;
+    left: 50%;
+    width: 316px;
+    height: 114px;
+    z-index: 2;
+  /* Autres styles */
+}
+
+.little-cloud {
+  /* Styles spécifiques au petit nuage */
+  background-image: url('/wp-content/uploads/2023/09/little_cloud.png');
+    filter: blur(6.5px);
+    left: 37%;
+    top: 39%;
+  width: 100px;
+  height: 30px;
+  z-index: 2; /* Utilisez un z-index supérieur pour le deuxième nuage */
+  /* Autres styles */
+}
+
+
+
+
+
+// --------------------------------------------------------------------------Menu Burger 
+.main-navigation {
+  display: flex;
+  justify-content: space-between; /* Place les éléments à l'extrémité gauche et droite */
+  align-items: center; /* Centre verticalement les éléments */
+}
+
+.site-title {
+  flex: 1; /* Le titre occupe tout l'espace disponible à gauche */
+  text-align: center; /* Centre le texte du titre */
+}
+
+.menu-burger {
+
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  order: 2; /* Place le menu burger en dernier dans l'ordre d'affichage */
+  margin-right: 1%;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+}
+
+
+.menu {
+  // display: none; /* Masquez initialement le menu */
+  margin-top: 3%;
+}
+
+.menu.active {
+  display: block; /* Affichez le menu lorsque la classe "active" est présente */
+}
+
+// APPARITION MENU 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(252, 252, 252); /* Couleur semi-transparente */
+  z-index:-1;
+  opacity: 0;
+  display: none; /* Initialement masqué */
+  transition: opacity 2s ease-in-out; /* Animation de l'opacité */
+  
+}
+.overlay.active {
+  display: block; /* Affichez l'élément lorsque la classe "active" est présente */
+  opacity: 1; /* Rendre l'élément complètement opaque */
+}
+
+
+//-------------------------------------------- CROIX MENU BURGER ---------------
+
+li.site-title{
+  list-style: none;
+}
+  .menu-burger.active .bar {
+    display: none;
+  }
+
+  .menu-burger.active .menu-icon {
+  display: block;
+  /* Vos styles pour l'image du menu en mode actif */
+}
+
+.menu-icon {
+  display: none;
+}
+
+
+// TEXT BURGER MENU STYLE 
+
+div.menu {
+display: flex;
+width: 100%;
+height: 100%;
+background: #FFF5E9;
+  div.middle {
+    ul {
+    margin:0;
+    padding: 0;
+  }
+}
+
+  li{
+    font-family: Roboto Mono;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: 0em;
+  text-align: center;
+  list-style-type: none;
+  }
+}
+
+
+// POSITIONNEMENT 3 DIVS BURGER MENU 
+
+
+// Chaque div occupe 1/3 de l'écran
+.left-img-menu-burger, .middle, .right-img-menu-burger {
+  flex: 1;
+  display: flex;
+  align-items: center; // Centre le contenu horizontalement
+}
+
+// Ajoutez du contenu ou des styles spécifiques pour chaque div
+.left-img-menu-burger img, .right-img-menu-burger img {
+  max-width: 100%;
+}
+
+
+// Positionnement éléments div 
+
+
+div.left-img-menu-burger > * ,  div.right-img-menu-burger > * ,div.middle{
+}
+
+.left-img-menu-burger{
+
+    .purple-flower{
+      max-width: 100%;
+      height: auto;
+    }
+
+    .purple-cat{
+      max-width: 100%;
+      height: auto;
+    }
+
+    .orange-wheel{
+    }
+
+   
+      
+      } 
+// EFFET MOUVEMENT CHATS
+      .hover-oscillation {
+        transition: transform 0.2s ease-in-out; /* Animation de 0.2 seconde avec une accélération douce */
+        animation: oscillate 1s ease-in-out infinite; /* Animation d'oscillation infinie sur 0.5 seconde */
+      }
+      
+      @keyframes oscillate {
+        0%, 100% {
+          transform: translateY(0); /* Position initiale, aucune translation */
+        }
+        50% {
+          transform: translateY(5px); /* Translation de 5 pixels vers le bas */
+        }
+      }
+
+
+
+
+img.sunflower,  .orange-wheel{
+  animation: rotate 20s linear infinite;
+}
+
+/* Supprimer le soulignement du lien par défaut */
+.middle ul li a {
+  text-decoration: none; /* Supprimer le soulignement */
+  color: #000; /* Couleur du texte du lien par défaut */
+}
+
+/* Appliquer une couleur différente lors du survol */
+.middle ul li a:hover {
+  filter: drop-shadow(0 0 14px #FF5C00);
+}
